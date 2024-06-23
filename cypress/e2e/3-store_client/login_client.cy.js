@@ -10,7 +10,7 @@ afterEach(() => {
     cy.screenshot()
 });
 
-    it('Must login successfully', () => {
+    it('1_Must login successfully', () => {
         cy.get('#username').type('thiago_test@testmail.com')
         cy.get('#password').type('09038512aB')   
         cy.get('.woocommerce-form > .button').click()
@@ -18,7 +18,7 @@ afterEach(() => {
 
     });
 
-    it('Should display an error message when entering invalid user', () => { 
+    it('2_Should display an error message when entering invalid user', () => { 
         cy.get('#username').type('thiago@testmail.com') // fake e-mail (incorrect scenario)
         cy.get('#password').type('09038512aB')   
         cy.get('.woocommerce-form > .button').click()
@@ -26,7 +26,7 @@ afterEach(() => {
         cy.get('.woocommerce-error').should('exist')
     });
 
-    it('Should display an error message when entering an invalid password', () => {
+    it('3_Should display an error message when entering an invalid password', () => {
         cy.get('#username').type('thiago_test@testmail.com') 
         cy.get('#password').type('0000000000') // fake password (incorrect scenario) 
         cy.get('.woocommerce-form > .button').click()
