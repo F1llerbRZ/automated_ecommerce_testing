@@ -8,7 +8,7 @@ describe('Functionality = Register', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     });
     
-    it('Must complete registration successfully', () => {
+    it('4_Must complete registration successfully', () => {
         cy.get('#reg_email').type(faker.internet.email())
         cy.get('#reg_password').type('09038512aB')
         cy.get(':nth-child(4) > .button').click()
@@ -24,7 +24,7 @@ describe('Functionality = Register', () => {
 
     });
 
-    it('Must complete registration successfully - Using variables', () => {
+    it('5_Must complete registration successfully - Using variables', () => {
 
         var email = faker.internet.email()
         var nome = faker.person.firstName()
