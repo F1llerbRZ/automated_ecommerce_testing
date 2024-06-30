@@ -1,9 +1,10 @@
-/// <reference types="cypress" />    
+/// <reference types="cypress" /> 
+const profile = require('../../fixtures/profile.json')   
 
 describe('Functionality = Login', () => {
 
 beforeEach(() => {
-    cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+    cy.visit('minha-conta')
 });
 
 afterEach(() => {
@@ -15,7 +16,6 @@ afterEach(() => {
         cy.get('#password').type('09038512aB')   
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')
-
     });
 
     it('2_Should display an error message when entering invalid user', () => { 
@@ -32,5 +32,21 @@ afterEach(() => {
         cy.get('.woocommerce-form > .button').click()
         cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail thiago_test@testmail.com está incorreta. Perdeu a senha?')
         cy.get('.woocommerce-error').should('exist')
+    });
+
+    it('4_Must login successfully - Using bulk data', () => {
+        cy.get('#username').type(profile.user)
+        cy.get('#password').type(profile.password)   
+        cy.get('.woocommerce-form > .button').click()
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')
+    });
+
+    it.only('5_Must login successfully - Using fixture', () => {
+        cy.fixture('profile').then( dados => {
+            cy.get('#username').type(dados.user , { log: false })
+            cy.get('#password').type(dados.password , { log: false })   
+            cy.get('.woocommerce-form > .button').click()
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')   
+        })
     });
 });

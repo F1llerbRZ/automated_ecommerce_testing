@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 describe('Functionality = Register', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
     });
     
     it('4_Must complete registration successfully', () => {
