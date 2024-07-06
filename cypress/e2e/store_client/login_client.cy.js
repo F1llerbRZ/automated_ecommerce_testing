@@ -41,12 +41,17 @@ afterEach(() => {
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')
     });
 
-    it.only('5_Must login successfully - Using fixture', () => {
+    it('5_Must login successfully - Using fixture', () => {
         cy.fixture('profile').then( dados => {
             cy.get('#username').type(dados.user , { log: false })
             cy.get('#password').type(dados.password , { log: false })   
             cy.get('.woocommerce-form > .button').click()
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')   
         })
+    });
+
+    it.only('6_ Must login successfully - Using custom commands', () => {
+        cy.login('thiago_test@testmail.com', '09038512aB')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')
     });
 });
