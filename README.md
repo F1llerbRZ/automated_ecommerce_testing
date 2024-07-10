@@ -3,19 +3,19 @@
 🚀Automated tests with Cypress guarantee the quality of web applications quickly, reliably and easily, using JavaScript language and running in different browsers.
 
 # Learning List 🎓
-1_CRUD
+1.CRUD
 
-2_Working with Hooks
+2.Working with Hooks
 
-3_Screenshot command
+3.Screenshot command
 
-4_Using bulk data
+4.Using bulk data
 
-5_Using variables
+5.Using variables
 
-6_Using fixtures
+6.Using fixtures
 
-7_Customizable commands
+7.Customizable commands
 
-8_Page Objects
+8.Page Objects
 
