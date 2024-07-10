@@ -5,17 +5,17 @@
 # Learning List 🎓
 . CRUD
 
-2. Working with Hooks
+. Working with Hooks
 
-3. Screenshot command
+. Screenshot command
 
-4. Using bulk data
+. Using bulk data
 
-5. Using variables
+. Using variables
 
-6. Using fixtures
+. Using fixtures
 
-7. Customizable commands
+. Customizable commands
 
-8. Page Objects
+. Page Objects
 
