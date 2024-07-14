@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Functionality: account details', () => {
+describe('Feature: account details', () => {
 
     beforeEach(() => {
         cy.visit('minha-conta/edit-account/')

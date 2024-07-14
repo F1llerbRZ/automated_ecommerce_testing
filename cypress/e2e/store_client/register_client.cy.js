@@ -2,7 +2,7 @@
 import { faker } from '@faker-js/faker';
 
 
-describe('Functionality = Register', () => {
+describe('Feature = Register', () => {
 
     beforeEach(() => {
         cy.visit('minha-conta')

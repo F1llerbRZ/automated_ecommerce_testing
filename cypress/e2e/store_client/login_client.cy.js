@@ -1,7 +1,7 @@
 /// <reference types="cypress" /> 
 const profile = require('../../fixtures/profile.json')   
 
-describe('Functionality = Login', () => {
+describe('Feature = Login', () => {
 
 beforeEach(() => {
     cy.visit('minha-conta')
@@ -50,7 +50,7 @@ afterEach(() => {
         })
     });
 
-    it.only('6_ Must login successfully - Using custom commands', () => {
+    it('6_ Must login successfully - Using custom commands', () => {
         cy.login('thiago_test@testmail.com', '09038512aB')
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, thiago_test (não é thiago_test? Sair)')
     });
